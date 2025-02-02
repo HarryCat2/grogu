@@ -3,15 +3,15 @@
 	"id": "grogu",
 	"version": "${version}",
 	"name": "Grogu",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "An addon for PSWG adding the popular character Grogu into the game",
 	"authors": [
-		"Me!"
+		"HarryCat"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/HarryCat2/grogu"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/grogu/icon.png",
 	"environment": "*",
 	"entrypoints": {
