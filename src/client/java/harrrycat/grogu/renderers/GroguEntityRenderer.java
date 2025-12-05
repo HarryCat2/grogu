@@ -2,11 +2,13 @@ package harrrycat.grogu.renderers;
 
 import harrrycat.grogu.Grogu;
 import harrrycat.grogu.entity.GroguEntity;
-import net.minecraft.client.render.VertexConsumerProvider;
+
+import net.minecraft.client.render.command.OrderedRenderCommandQueue;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.state.LivingEntityRenderState;
+import net.minecraft.client.render.state.CameraRenderState;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
@@ -32,9 +34,9 @@ public class GroguEntityRenderer extends MobEntityRenderer<GroguEntity, LivingEn
 	}
 
 	@Override
-	public void render(LivingEntityRenderState livingEntityRenderState, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i)
+	public void render(LivingEntityRenderState livingEntityRenderState, MatrixStack matrixStack, OrderedRenderCommandQueue queue, CameraRenderState i)
 	{
-		super.render(livingEntityRenderState, matrixStack, vertexConsumerProvider, i);
+		super.render(livingEntityRenderState, matrixStack, queue, i);
 	}
 }
 

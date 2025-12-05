@@ -1,6 +1,7 @@
 package harrrycat.grogu;
 
 import harrrycat.grogu.entity.GroguEntity;
+import harrrycat.grogu.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -42,6 +43,9 @@ public class Grogu implements ModInitializer {
 		FabricDefaultAttributeRegistry.register(GROGU_ENTITY, GroguEntity.createMobAttributes().add(EntityAttributes.MAX_HEALTH, Integer.MAX_VALUE));
 
 		LOGGER.info("Little Green Menace has initialized");
+
+        ModItems.registerModItems();
+
 	}
 	public static <T extends Entity> EntityType<T> entityType(Identifier registryKey, EntityType.Builder<T> builder)
 	{
