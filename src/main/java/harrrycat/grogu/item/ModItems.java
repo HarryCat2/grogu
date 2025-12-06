@@ -35,9 +35,9 @@ public class ModItems {
     );
     public static final Item BLUE_COOKIES = registerItem(
             "blue_cookies",
-            settings -> new BlueCookieItem(settings
+            settings -> new Item(settings
                     .maxCount(8)
-                    //.food(ModFoodComponents.BLUE_COOKIES)
+                    .food(ModFoodComponents.BLUE_COOKIES)
             )
     );
 

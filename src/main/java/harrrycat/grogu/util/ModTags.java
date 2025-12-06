@@ -18,6 +18,7 @@ public class ModTags {
 
         public static class Items {
             public static final TagKey<Item> CAN_LGM_EAT = TagKey.of(RegistryKeys.ITEM, id("grogu_can_eat"));
+            public static final TagKey<Item> CAN_LGM_EQUIP = TagKey.of(RegistryKeys.ITEM, id("grogu_can_eat"));
 
             private static TagKey<Item> createtag(String name) {
                 return TagKey.of(RegistryKeys.ITEM, Identifier.of(Grogu.MOD_ID));

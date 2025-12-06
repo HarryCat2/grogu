@@ -1,7 +1,7 @@
 package harrrycat.grogu;
 
 import harrrycat.grogu.renderers.GroguEntityRenderer;
-import harrrycat.grogu.renderers.GroguModel;
+import harrrycat.grogu.renderers.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
