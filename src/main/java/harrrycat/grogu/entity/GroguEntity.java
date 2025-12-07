@@ -3,6 +3,7 @@ import harrrycat.grogu.Grogu;
 import net.minecraft.block.BlockState;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.AnimationState;
+import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.LookAtEntityGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
@@ -50,15 +51,15 @@ public class GroguEntity extends PathAwareEntity {
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new LookAtEntityGoal(this, PlayerEntity.class, 1f));
-        this.goalSelector.add(2, new WanderAroundFarGoal(this, 1D));
+        this.goalSelector.add(2, new WanderAroundFarGoal(this, 0.15D, 0.5f));
     }
 
     // -- Attributes -- //
     public static DefaultAttributeContainer.Builder createGroguAttributes() {
         return PathAwareEntity.createLivingAttributes()
                 .add(EntityAttributes.ARMOR, 15)
-                .add(EntityAttributes.MOVEMENT_EFFICIENCY, 0.01f)
-                .add(EntityAttributes.MOVEMENT_SPEED, 0.01f);
+                .add(EntityAttributes.MOVEMENT_EFFICIENCY, 0.015f)
+                .add(EntityAttributes.MOVEMENT_SPEED, 0.015f);
     }
 
     // some logic category don't ask me I don't name things //
@@ -77,6 +78,15 @@ public class GroguEntity extends PathAwareEntity {
     // -- Animation -- //
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
+
+
+
+
+    @Override
+    protected void updateLimbs(float posDelta) {
+        float f = this.getPose() == EntityPose.STANDING ? Math.min(posDelta * 6.0F, 1.0F) : 0.0f;
+        this.limbAnimator.updateLimbs(f, 0.2F, this.isBaby() ? 3.0F : 1.0F);
+    }
 
     private void updateAnimations() {
         if (this.idleAnimationTimeout <= 0) {
